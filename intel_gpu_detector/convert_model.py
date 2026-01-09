@@ -130,7 +130,7 @@ def main():
     # convert_onnx_to_openvino("../v11moudle/kenny_ultra_640_v11s.onnx", "models", compress_to_fp16=True)
 
     # 方式2: 批量转换目录中的所有模型 (推荐)
-    batch_convert("../v11moudle", "models", compress_to_fp16=True)
+    batch_convert("../v11moudle", "models", compress_to_fp16=False)
 
 
 if __name__ == "__main__":

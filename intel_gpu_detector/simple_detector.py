@@ -241,7 +241,7 @@ def main():
     # ==================== 配置区 ====================
     #
     # 模型配置
-    model_path = "../models/val_kenny_ultra_256_v11s.xml"
+    model_path = "models/val_kenny_ultra_256_v11s.xml"
     center_size = 256
 
     # 硬件配置
