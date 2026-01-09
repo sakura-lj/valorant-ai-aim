@@ -1,0 +1,22 @@
+# VALORANT 实时检测系统 - TensorRT 版本依赖
+
+# TRTYOLO 推理引擎 (TensorRT YOLO)
+trtyolo>=6.4.0
+
+# 图像处理
+opencv-python>=4.8.0
+numpy>=1.24.0
+
+# 高速屏幕捕获
+dxcam>=0.0.5
+
+# 可选: NVIDIA CUDA 和 TensorRT
+# 请从 NVIDIA 官网下载并安装:
+# - CUDA Toolkit: https://developer.nvidia.com/cuda-downloads
+# - cuDNN: https://developer.nvidia.com/cudnn
+# - TensorRT: https://developer.nvidia.com/tensorrt
+#
+# 注意: TRTYOLO 需要 TensorRT 运行时支持
+# 推荐版本:
+# - CUDA >= 11.8
+# - TensorRT >= 8.6

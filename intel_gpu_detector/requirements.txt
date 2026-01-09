@@ -1,0 +1,19 @@
+# VALORANT 实时检测系统 - 极简版依赖
+
+# OpenVINO运行时 (推理)
+openvino>=2024.0.0
+
+# OpenVINO开发工具 (模型转换，仅首次使用)
+openvino-dev>=2024.0.0
+
+# 图像处理
+opencv-python>=4.8.0
+numpy>=1.24.0
+
+# 高速屏幕捕获
+dxcam>=0.0.5
+
+# 可选: Intel GPU驱动
+# 如果使用Intel核显，需要安装Intel GPU驱动
+# Windows: 从Intel官网下载最新驱动
+# Linux: sudo apt-get install intel-opencl-icd

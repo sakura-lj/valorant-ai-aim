@@ -1,0 +1,18 @@
+# VALORANT 实时检测系统 - ONNX Runtime GPU 版本依赖
+
+# ONNX Runtime GPU 版本 (支持 CUDA 加速)
+onnxruntime-gpu>=1.16.0
+
+# 图像处理
+opencv-python>=4.8.0
+numpy>=1.24.0
+
+# 高速屏幕捕获
+dxcam>=0.0.5
+
+# 注意:
+# 1. onnxruntime-gpu 需要 CUDA 支持
+# 2. 推荐 CUDA 版本: 11.8 或 12.x
+# 3. 如果没有 NVIDIA GPU，可以使用 onnxruntime 代替 onnxruntime-gpu (仅 CPU)
+#    pip uninstall onnxruntime-gpu
+#    pip install onnxruntime
