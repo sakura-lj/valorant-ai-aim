@@ -6,6 +6,7 @@ import cv2
 import numpy as np
 import dxcam
 import time
+from pathlib import Path
 from typing import List, Tuple, Dict, Optional
 from yolo_detector_onnx import YOLOv11DetectorONNX
 
@@ -232,12 +233,31 @@ class SimpleRealtimeDetector:
 def main():
     """主函数"""
 
+    # ==================== GT 1030 优化配置 ====================
+    # 针对低端 NVIDIA GPU 优化
+    #
+    # 配置说明:
+    # - 使用 256x256 小模型（最快）
+    # - 减小捕获区域到 256
+    # - 提高置信度阈值（减少后处理）
+    # - 预期 FPS: 60-100 (GT 1030)
+    # =========================================================
+
     # 配置
-    model_path = "../v11moudle/kenny_ultra_640_v11s.onnx"  # ONNX 模型路径
-    center_size = 640
-    conf_threshold = 0.50
-    iou_threshold = 0.35
-    enable_profiling = True  # 启用性能分析
+    model_path = "../v11moudle/val_kenny_ultra_256_v11s.onnx"  # 使用 256 小模型
+    center_size = 256  # 减小捕获区域
+    conf_threshold = 0.60  # 提高阈值，减少误检
+    iou_threshold = 0.40  # 稍微提高
+    enable_profiling = False  # 关闭性能分析以节省开销
+
+    print("="*80)
+    print("[INFO] GT 1030 优化配置:")
+    print(f"  - 模型: {Path(model_path).name}")
+    print(f"  - 捕获区域: {center_size}x{center_size}")
+    print(f"  - 置信度: {conf_threshold}")
+    print(f"  - 预期 FPS: 60-100")
+    print("="*80)
+    print()
 
     # 创建检测器
     detector = SimpleRealtimeDetector(
