@@ -45,12 +45,16 @@ class YOLOv11DetectorOpenVINO:
         }
         
         # 获取输入 Tensor 的 shape
-        input_layer = self.compiled_model.input(0)
-        input_shape = input_layer.shape
+        
+        self.compiled_model = self.core.compile_model(model, device, config)
 
-        # 针对 NCHW 布局的正确取值方式
-        self.input_height = input_shape[2]
-        self.input_width = input_shape[3]
+        # 获取输入尺寸
+
+        input_shape = self.compiled_model.input(0).shape
+
+        self.input_height, self.input_width = input_shape[1], input_shape[2] # NHWC 模式下
+
+        self.infer_request = self.compiled_model.create_infer_request()
 
         print(f"模型输入尺寸确认: Width={self.input_width}, Height={self.input_height}")
 
