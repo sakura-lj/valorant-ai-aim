@@ -218,7 +218,7 @@ def main():
         # 电磁铁控制配置（可选）
         # 使用方法：填入你的ESP32的IP地址以启用电磁铁控制
         # 例如: "esp32_ip": "192.168.1.100"
-        "esp32_ip": None,  # 设置为ESP32的IP以启用，或None禁用
+        "esp32_ip": "192.168.2.72",  # 设置为ESP32的IP以启用，或None禁用
         "esp32_port": 3333,  # ESP32 UDP端口
         "magnet_threshold_on": 25.0,   # 距离≤25px时开启电磁铁
         "magnet_threshold_off": 35.0,  # 距离≥35px时关闭电磁铁
