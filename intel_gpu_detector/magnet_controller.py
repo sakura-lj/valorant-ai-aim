@@ -82,11 +82,13 @@ class MagnetController:
             # 距离足够近，应该开启
             if not self.magnet_state:
                 self._set_state(True)
+                print(f"[Magnet] 目标接近 ({distance:.1f}px)，开启电磁铁")
 
         elif distance >= self.threshold_off:
             # 距离足够远，应该关闭
             if self.magnet_state:
                 self._set_state(False)
+                print(f"[Magnet] 目标远离 ({distance:.1f}px)，关闭电磁铁")
 
         # 在迟滞区间内（threshold_on < distance < threshold_off）：保持原状态
 

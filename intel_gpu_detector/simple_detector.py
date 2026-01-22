@@ -226,7 +226,7 @@ def main():
         # 生产模式配置
         # headless=True: 无界面模式，减少3-7ms延迟（生产环境推荐）
         # headless=False: 调试模式，显示可视化窗口（开发测试用）
-        "headless": False,  # 生产环境改为 True
+        "headless": True,  # 生产环境改为 True
     }
 
     app = SimpleRealtimeDetector(**CONFIG)
