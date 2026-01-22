@@ -157,12 +157,12 @@ class SimpleRealtimeDetector:
                         break
 
                 # 6. 性能统计
-                self.frame_times.append(time.perf_counter() - t1)
-                if len(self.frame_times) >= 120:
-                    self.fps = 1.0 / (sum(self.frame_times) / 120)
-                    # 生产模式下，每30帧打印一次性能
-                    if self.headless:
-                        print(f"[Performance] FPS: {self.fps:.1f} | Targets: {len(detections)} | Latency: {(1000/self.fps):.1f}ms")
+                # self.frame_times.append(time.perf_counter() - t1)
+                # if len(self.frame_times) >= 120:
+                #     self.fps = 1.0 / (sum(self.frame_times) / 120)
+                #     # 生产模式下，每30帧打印一次性能
+                #     if self.headless:
+                #         print(f"[Performance] FPS: {self.fps:.1f} | Targets: {len(detections)} | Latency: {(1000/self.fps):.1f}ms")
 
         except KeyboardInterrupt:
             print("\n[INFO] 收到退出信号，正在关闭...")
