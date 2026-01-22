@@ -76,7 +76,7 @@ class SimpleRealtimeDetector:
             print(f"  - 电磁铁控制未启用（未配置ESP32 IP）")
 
         # FPS 计数
-        self.frame_times = deque(maxlen=30)
+        self.frame_times = deque(maxlen=120)
         self.fps = 0
 
         print("\n[SUCCESS] 系统初始化完成! 准备开始检测...")
